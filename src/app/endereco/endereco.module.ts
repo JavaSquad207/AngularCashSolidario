@@ -1,0 +1,10 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+import { EnderecoRoutingModule } from './endereco-routing.module';
+
+@NgModule({
+  declarations: [],
+  imports: [CommonModule, EnderecoRoutingModule],
+})
+export class EnderecoModule {}
