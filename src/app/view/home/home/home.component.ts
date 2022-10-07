@@ -18,6 +18,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['']);
   }
   irParaTelaEndereco() {
-    this.router.navigate(['']);
+    this.router.navigate(['endereco']);
   }
 }

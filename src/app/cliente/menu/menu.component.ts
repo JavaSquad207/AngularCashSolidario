@@ -16,8 +16,12 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  public novoCliente() {
+    this.router.navigate(['novocliente']);
+  }
+
   public cadCliente() {
-    this.router.navigate(['menucliente']);
+    this.router.navigate(['../cliente/cadastrocliente']);
   }
 
 }

@@ -1,56 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { Cliente } from '../../../shared/model/cliente';
 import { Endereco } from '../../../shared/model/endereco';
-import { ClienteService } from '../../../shared/service/cliente.service';
 import { EnderecoService } from '../../../shared/service/endereco.service';
 
 @Component({
-  selector: 'app-formcliente',
-  templateUrl: './formcliente.component.html',
-  styleUrls: ['./formcliente.component.scss'],
+  selector: 'app-formendereco',
+  templateUrl: './formendereco.component.html',
+  styleUrls: ['./formendereco.component.scss']
 })
-export class FormclienteComponent implements OnInit {
-  form: FormGroup;
+export class FormenderecoComponent implements OnInit {
   formEnd: FormGroup;
-  public dataSource: Array<Cliente> = new Array();
+  public dataSourceEnd: Array<Endereco> = new Array();
   constructor(
     private formBuilder: FormBuilder,
-    private servicecliente: ClienteService,
     private serviceendereco: EnderecoService,
     private router: Router
   ) {
-    this.form = this.formBuilder.group({
-      id: [null],
-      nome: [null],
-      cpf: [null],
-    });
     this.formEnd = this.formBuilder.group({
-      logradouro: [null],
-      numero: [null],
-      complemento: [null],
-      bairro: [null],
-      cep: [null],
-      cidade: [null],
-      uf: [null],
-      client: [null],
-    });
+    logradouro: [null],
+    numero: [null],
+    complemento: [null],
+    bairro: [null],
+    cep: [null],
+    cidade: [null],
+    uf: [null],
+
+  });
+
   }
 
   ngOnInit(): void {
-    this.createForm(new Cliente());
     this.createFormend(new Endereco());
   }
 
-  createForm(cliente: Cliente) {
-    this.form = new FormGroup({
-      nome: new FormControl(cliente.nome),
-      cpf: new FormControl(cliente.cpf),
 
-    });
-  }
 
   public createFormend(endereco: Endereco) {
     this.formEnd = new FormGroup({
@@ -65,27 +49,25 @@ export class FormclienteComponent implements OnInit {
   }
 
   public onCancel() {
-    this.router.navigate(['cliente']);
+    this.router.navigate(['endereco']);
   }
 
 
   public onSubmit() {
-    this.servicecliente.salvar(this.form.value);
+
     this.serviceendereco.salvar(this.formEnd.value);
-    this.router.navigate(['cliente']);
+    this.router.navigate(['endereco']);
 
   }
 
-  public listadeclientes() {
-    this.servicecliente.list().subscribe(
+  public listadeenderecos() {
+    this.serviceendereco.list().subscribe(
       (resultado) => {
-        this.dataSource = resultado;
+        this.dataSourceEnd = resultado;
       },
       (erro) => {
         console.log('DEU ERRO. Causa' + erro);
       }
     );
   }
-
-
 }

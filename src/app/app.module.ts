@@ -19,7 +19,7 @@ import { HomeModule } from './view/home/home.module';
 import { HomeComponent } from './view/home/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent,HomeComponent, FooterComponent, HeaderComponent],
+  declarations: [AppComponent,HomeComponent, FooterComponent, HeaderComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,7 +38,8 @@ import { HomeComponent } from './view/home/home/home.component';
     HeaderModule,
     FooterModule,
     HomeModule,
-    
+
+
 
   ],
   providers: [],

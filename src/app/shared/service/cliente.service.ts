@@ -16,9 +16,15 @@ export class ClienteService {
   }
 
   salvar(cliente: Cliente) {
-    return this.httpClient
+    let dataCliente: Cliente;
+    this.httpClient
       .post<Cliente>(this.API + '/salvar', cliente)
-      .subscribe((data) => console.log(data));
+      .subscribe((data) => {
+        console.log(data);
+        dataCliente = data;
+
+      });
+      return dataCliente!;
   }
 
   excluir(id: number) {
