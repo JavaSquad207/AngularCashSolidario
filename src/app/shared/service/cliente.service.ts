@@ -27,6 +27,8 @@ export class ClienteService {
       return dataCliente!;
   }
 
+  
+
   excluir(id: number) {
     return this.httpClient
       .get(this.API + '/delete/' + id)

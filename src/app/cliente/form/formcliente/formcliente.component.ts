@@ -3,8 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Cliente } from '../../../shared/model/cliente';
-import { Endereco } from '../../../shared/model/endereco';
-import { ClienteService } from '../../../shared/service/cliente.service';
+import { Endereco, EnderecoCli } from '../../../shared/model/endereco';
 import { EnderecoService } from '../../../shared/service/endereco.service';
 
 @Component({
@@ -16,9 +15,9 @@ export class FormclienteComponent implements OnInit {
   form: FormGroup;
   formEnd: FormGroup;
   public dataSource: Array<Cliente> = new Array();
+  public dataSourceEnd: Array<Endereco> = new Array();
   constructor(
     private formBuilder: FormBuilder,
-    private servicecliente: ClienteService,
     private serviceendereco: EnderecoService,
     private router: Router
   ) {
@@ -35,24 +34,28 @@ export class FormclienteComponent implements OnInit {
       cep: [null],
       cidade: [null],
       uf: [null],
-      client: [null],
+      cliente: this.form
+
+
     });
   }
 
   ngOnInit(): void {
     this.createForm(new Cliente());
-    this.createFormend(new Endereco());
+    this.createFormend(new EnderecoCli());
+    this.router.navigate(['novocliente']);
+
+
   }
 
   createForm(cliente: Cliente) {
     this.form = new FormGroup({
       nome: new FormControl(cliente.nome),
       cpf: new FormControl(cliente.cpf),
-
     });
   }
 
-  public createFormend(endereco: Endereco) {
+  public createFormend(endereco: EnderecoCli) {
     this.formEnd = new FormGroup({
       logradouro: new FormControl(endereco.logradouro),
       numero: new FormControl(endereco.numero),
@@ -61,31 +64,19 @@ export class FormclienteComponent implements OnInit {
       cep: new FormControl(endereco.cep),
       cidade: new FormControl(endereco.cidade),
       uf: new FormControl(endereco.uf),
-    });
+      cliente: this.form
+      });
   }
 
   public onCancel() {
     this.router.navigate(['cliente']);
+
   }
 
-
   public onSubmit() {
-    this.servicecliente.salvar(this.form.value);
     this.serviceendereco.salvar(this.formEnd.value);
     this.router.navigate(['cliente']);
 
   }
-
-  public listadeclientes() {
-    this.servicecliente.list().subscribe(
-      (resultado) => {
-        this.dataSource = resultado;
-      },
-      (erro) => {
-        console.log('DEU ERRO. Causa' + erro);
-      }
-    );
-  }
-
 
 }

@@ -1,3 +1,4 @@
+import { Cliente } from './cliente';
 export class Endereco {
   id: number  = 0;
   logradouro: string = '';
@@ -7,5 +8,17 @@ export class Endereco {
   cep: string = '';
   cidade: string = '';
   uf: string = '';
-  client:  number = 0;
+  }
+
+export class EnderecoCli {
+  id: number  = 0;
+  logradouro: string = '';
+  numero: number = 0;
+  complemento: string = '';
+  bairro: string = '';
+  cep: string = '';
+  cidade: string = '';
+  uf: string = '';
+  cliente: Cliente;
 }
+

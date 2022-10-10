@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'cliente/cadastrocliente', loadChildren: () => import('./cliente/cliente.module').then(m => m.ClienteModule)},
   { path: 'listadeendereco', loadChildren: () => import('./endereco/endereco.module').then(m => m.EnderecoModule)},
   { path: 'endereco',component: MenuenderecoComponent},
-  { path: 'novoendereco', loadChildren: () => import('./endereco/form/form.module').then(m=>m.FormModule)},
+  
 
 
 ];
