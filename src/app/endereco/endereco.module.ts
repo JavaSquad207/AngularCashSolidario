@@ -21,7 +21,7 @@ import { MenuenderecoComponent } from './menuendereco/menuendereco.component';
     MatCardModule,
     MatIconModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
   ]
 })
 export class EnderecoModule { }

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['cliente']);
   }
   irParaTelaEntidade() {
-    this.router.navigate(['']);
+    this.router.navigate(['entidade']);
   }
   irParaTelaEndereco() {
     this.router.navigate(['endereco']);

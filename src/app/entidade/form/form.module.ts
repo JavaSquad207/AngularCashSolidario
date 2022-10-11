@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -13,35 +14,39 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { ClienteRoutingModule } from './cliente-routing.module';
-import { ClienteComponent } from './cliente/cliente.component';
-import { MenuComponent } from './menu/menu.component';
+import { FormRoutingModule } from './form-routing.module';
+import { FormentidadeComponent } from './formentidade/formentidade.component';
 
 @NgModule({
-  declarations: [ClienteComponent, MenuComponent],
+  declarations: [FormentidadeComponent],
   imports: [
-     CommonModule,
-     ClienteRoutingModule,
-     MatCardModule,
-     MatTableModule,
-     MatIconModule,
-     MatCardModule,
-     MatIconModule,
-     MatFormFieldModule,
-     MatToolbarModule,
-     MatButtonModule,
-     MatCardModule,
-     MatNativeDateModule,
-     MatDatepickerModule,
-     MatDialogModule,
-     MatFormFieldModule,
-     MatIconModule,
-     MatInputModule,
-     MatRadioModule,
-     MatSelectModule,
-     MatTableModule,
-     MatToolbarModule,
-    ],
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormRoutingModule,
+    MatCardModule,
+    MatTableModule,
+    MatIconModule,
+    MatCardModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatTableModule,
+    MatToolbarModule,
+    FormsModule,
 
+
+
+  ],
 })
-export class ClienteModule {}
+export class FormModule {}

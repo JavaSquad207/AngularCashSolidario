@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Cliente } from '../../../shared/model/cliente';
-import { Endereco, EnderecoCli } from '../../../shared/model/endereco';
+import { Endereco, EnderecoCli, EndCliEnt } from '../../../shared/model/endereco';
 import { EnderecoService } from '../../../shared/service/endereco.service';
 
 @Component({
@@ -14,6 +14,7 @@ import { EnderecoService } from '../../../shared/service/endereco.service';
 export class FormclienteComponent implements OnInit {
   form: FormGroup;
   formEnd: FormGroup;
+  formEntid: FormGroup;
   public dataSource: Array<Cliente> = new Array();
   public dataSourceEnd: Array<Endereco> = new Array();
   constructor(
@@ -21,6 +22,13 @@ export class FormclienteComponent implements OnInit {
     private serviceendereco: EnderecoService,
     private router: Router
   ) {
+
+    this.formEntid = this.formBuilder.group ({
+      id: [null],
+      nome: [null],
+      cnpj: [null],
+
+    });
     this.form = this.formBuilder.group({
       id: [null],
       nome: [null],
@@ -35,27 +43,23 @@ export class FormclienteComponent implements OnInit {
       cidade: [null],
       uf: [null],
       cliente: this.form
-
-
     });
   }
 
   ngOnInit(): void {
     this.createForm(new Cliente());
-    this.createFormend(new EnderecoCli());
+    this.createFormend(new EndCliEnt());
     this.router.navigate(['novocliente']);
-
-
   }
 
-  createForm(cliente: Cliente) {
+  public createForm(cliente: Cliente) {
     this.form = new FormGroup({
       nome: new FormControl(cliente.nome),
       cpf: new FormControl(cliente.cpf),
     });
   }
 
-  public createFormend(endereco: EnderecoCli) {
+  public createFormend(endereco: EndCliEnt) {
     this.formEnd = new FormGroup({
       logradouro: new FormControl(endereco.logradouro),
       numero: new FormControl(endereco.numero),
@@ -64,7 +68,8 @@ export class FormclienteComponent implements OnInit {
       cep: new FormControl(endereco.cep),
       cidade: new FormControl(endereco.cidade),
       uf: new FormControl(endereco.uf),
-      cliente: this.form
+      cliente: this.form,
+      // entidade: this.formEntid
       });
   }
 
