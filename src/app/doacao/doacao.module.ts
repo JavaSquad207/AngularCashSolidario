@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -14,16 +13,20 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { FormRoutingModule } from './form-routing.module';
-import { FormentidadeComponent } from './formentidade/formentidade.component';
+import { DoacaoRoutingModule } from './doacao-routing.module';
+import { DoacaoComponent } from './doacao/doacao.component';
+import { MenudoacaoComponent } from './menudoacao/menudoacao.component';
+
 
 @NgModule({
-  declarations: [FormentidadeComponent],
+  declarations: [
+    MenudoacaoComponent,
+    DoacaoComponent,
+    
+  ],
   imports: [
-    FormsModule,
     CommonModule,
-    ReactiveFormsModule,
-    FormRoutingModule,
+    DoacaoRoutingModule,
     MatCardModule,
     MatTableModule,
     MatIconModule,
@@ -43,10 +46,6 @@ import { FormentidadeComponent } from './formentidade/formentidade.component';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-    FormsModule,
-
-
-
-  ],
+  ]
 })
-export class FormModule {}
+export class DoacaoModule { }

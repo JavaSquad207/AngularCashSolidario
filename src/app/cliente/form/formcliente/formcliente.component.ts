@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Cliente } from '../../../shared/model/cliente';
-import { Endereco, EnderecoCli, EndCliEnt } from '../../../shared/model/endereco';
+import { EndCliEnt, Endereco } from '../../../shared/model/endereco';
 import { EnderecoService } from '../../../shared/service/endereco.service';
 
 @Component({

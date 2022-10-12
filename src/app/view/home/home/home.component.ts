@@ -20,4 +20,11 @@ export class HomeComponent implements OnInit {
   irParaTelaEndereco() {
     this.router.navigate(['endereco']);
   }
+  irParaTelaCampanha() {
+    this.router.navigate(['menucampanha']);
+  }
+
+  irParaTelaDoacao() {
+    this.router.navigate(['menudoacao']);
+  }
 }

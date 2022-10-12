@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Endereco, EnderecoEnt, EndCliEnt } from '../../../shared/model/endereco';
+import { EndCliEnt, Endereco } from '../../../shared/model/endereco';
 import { Entidade } from '../../../shared/model/entidade';
-import { EntidadeService } from '../../../shared/service/entidade.service';
 import { EnderecoService } from '../../../shared/service/endereco.service';
-import { Cliente } from '../../../shared/model/cliente';
 
 
 
