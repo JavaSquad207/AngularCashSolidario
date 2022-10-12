@@ -11,7 +11,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-
+import { NgxMaskModule } from 'ngx-mask';
 import { FormRoutingModule } from './form-routing.module';
 import { FormclienteComponent } from './formcliente/formcliente.component';
 
@@ -32,6 +32,7 @@ import { FormclienteComponent } from './formcliente/formcliente.component';
     MatSelectModule,
     MatButtonModule,
     MatCardModule,
+    NgxMaskModule.forRoot()
   ],
 })
 export class FormModule {}

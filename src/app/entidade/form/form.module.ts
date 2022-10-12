@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { FormRoutingModule } from './form-routing.module';
 import { FormentidadeComponent } from './formentidade/formentidade.component';
@@ -44,6 +45,7 @@ import { FormentidadeComponent } from './formentidade/formentidade.component';
     MatTableModule,
     MatToolbarModule,
     FormsModule,
+    NgxMaskModule.forRoot()
 
 
 
