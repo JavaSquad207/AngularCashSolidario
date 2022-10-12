@@ -18,7 +18,7 @@ import { EntidadeRoutingModule } from './entidade-routing.module';
 
 @NgModule({
   declarations: [
-    
+
 
      ],
   imports: [
@@ -43,6 +43,7 @@ import { EntidadeRoutingModule } from './entidade-routing.module';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
+
 
          ]
 })
