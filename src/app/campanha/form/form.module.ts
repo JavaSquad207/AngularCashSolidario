@@ -15,38 +15,28 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { FormRoutingModule } from './form-routing.module';
-import { FormentidadeComponent } from './formentidade/formentidade.component';
 
 @NgModule({
-  declarations: [FormentidadeComponent],
+  declarations: [],
   imports: [
-    FormsModule,
     CommonModule,
-    ReactiveFormsModule,
     FormRoutingModule,
-    MatCardModule,
-    MatTableModule,
-    MatIconModule,
-    MatCardModule,
-    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    FormRoutingModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
     MatNativeDateModule,
     MatDatepickerModule,
     MatDialogModule,
-    MatFormFieldModule,
-    MatIconModule,
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
+    MatButtonModule,
+    MatCardModule,
     MatTableModule,
-    MatToolbarModule,
-    FormsModule,
-
-
-
+    MatIconModule,
   ],
 })
 export class FormModule {}

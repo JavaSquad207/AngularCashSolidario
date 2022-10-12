@@ -27,7 +27,7 @@ export class EnderecoService {
       .subscribe((data) => console.log(data));
   }
 
-  listid(id: Number) {
+  listid(id: number) {
     return this.httpClient.get<Endereco[]>(this.API + '/enderecoid/'+id);
   }
 }

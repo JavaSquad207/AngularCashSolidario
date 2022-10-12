@@ -1,6 +1,6 @@
-import { EntidadeComponent } from './../../entidade/entidade/entidade.component';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Entidade } from '../model/entidade';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { Cliente } from './../model/cliente';
+import { Doacao } from '../model/doacao';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -6,20 +6,20 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
+export class DoacaoService {
 
-  private readonly API = 'http://localhost:8080/cliente';
-  
+  private readonly API = 'http://localhost:8080/doacao';
+
   constructor(private httpClient: HttpClient) {}
 
   list() {
-    return this.httpClient.get<Cliente[]>(this.API + '/listatodos');
+    return this.httpClient.get<Doacao[]>(this.API + '/listatodos');
   }
 
-  salvar(cliente: Cliente) {
-    let dataCliente: Cliente;
+  salvar(doacao: Doacao) {
+    let dataCliente: Doacao;
     this.httpClient
-      .post<Cliente>(this.API + '/salvar', cliente)
+      .post<Doacao>(this.API + '/salvar', doacao)
       .subscribe((data) => {
         console.log(data);
         dataCliente = data;
@@ -29,10 +29,14 @@ export class ClienteService {
   }
 
 
-
   excluir(id: number) {
     return this.httpClient
       .get(this.API + '/delete/' + id)
       .subscribe((data) => console.log(data));
   }
+
+  listid(id: number) {
+    return this.httpClient.get<Doacao[]>(this.API + '/doacaoid/'+id);
+  }
+
 }

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -14,16 +13,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { FormRoutingModule } from './form-routing.module';
-import { FormentidadeComponent } from './formentidade/formentidade.component';
+import { CampanhaRoutingModule } from './campanha-routing.module';
+
 
 @NgModule({
-  declarations: [FormentidadeComponent],
+  declarations: [
+
+
+
+  ],
   imports: [
-    FormsModule,
+
     CommonModule,
-    ReactiveFormsModule,
-    FormRoutingModule,
+    CampanhaRoutingModule,
     MatCardModule,
     MatTableModule,
     MatIconModule,
@@ -43,10 +45,6 @@ import { FormentidadeComponent } from './formentidade/formentidade.component';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-    FormsModule,
-
-
-
-  ],
+  ]
 })
-export class FormModule {}
+export class CampanhaModule { }
