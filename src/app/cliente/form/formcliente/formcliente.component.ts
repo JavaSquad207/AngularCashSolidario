@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Cliente } from '../../../shared/model/cliente';
@@ -30,18 +30,18 @@ export class FormclienteComponent implements OnInit {
 
     });
     this.form = this.formBuilder.group({
-      id: [null, ],
-      nome: [null, ],
-      cpf: [null],
+      id:  [null],
+      nome:  [null, [Validators.required]],
+      cpf:  [null, [Validators.required]],
     });
     this.formEnd = this.formBuilder.group({
-      logradouro: [ null,],
-      numero: [null],
-      complemento: [null],
-      bairro: [null],
-      cep: [null],
-      cidade: [null],
-      uf: [null],
+      logradouro: [ null, [Validators.required]],
+      numero: [null, [Validators.required]],
+      complemento: [null, [Validators.required]],
+      bairro: [null, [Validators.required]],
+      cep: [null, [Validators.required]],
+      cidade: [null, [Validators.required]],
+      uf: [null, [Validators.required]],
       cliente: this.form
     });
   }
@@ -52,14 +52,45 @@ export class FormclienteComponent implements OnInit {
     this.router.navigate(['novocliente']);
   }
 
-  public createForm(cliente: Cliente) {
+  get nome() {
+    return this.form.get('nome')!;
+  }
+
+  get cpf() {
+    return this.form.get('cpf')!;
+  }
+
+  get logradouro() {
+    return this.formEnd.get('logradouro')!;
+  };
+  get numero() {
+    return this.formEnd.get('numero')!;
+  };
+  get complemento() {
+    return this.formEnd.get('complemento')!;
+  };
+  get bairro() {
+    return this.formEnd.get('bairro')!;
+  };
+  get cep() {
+    return this.formEnd.get('cep')!;
+  };
+  get cidade() {
+    return this.formEnd.get('cidade')!;
+  };
+  get uf() {
+    return this.formEnd.get('uf')!;
+  };
+
+
+  public createForm1(cliente: Cliente) {
     this.form = new FormGroup({
       nome: new FormControl(cliente.nome),
       cpf: new FormControl(cliente.cpf),
     });
   }
 
-  public createFormend(endereco: EndCliEnt) {
+  public createFormend1(endereco: EndCliEnt) {
     this.formEnd = new FormGroup({
       logradouro: new FormControl(endereco.logradouro),
       numero: new FormControl(endereco.numero),
@@ -73,12 +104,37 @@ export class FormclienteComponent implements OnInit {
       });
   }
 
+  public createForm(cliente: Cliente) {
+    this.form = this.formBuilder.group({
+      nome: [cliente.nome, [Validators.required]],
+      cpf: [cliente.cpf, [Validators.required]],
+    });
+  }
+
+  public createFormend(endereco: EndCliEnt) {
+    this.formEnd = this.formBuilder.group({
+      logradouro: [endereco.logradouro, [Validators.required]],
+      numero: [endereco.numero, [Validators.required]],
+      complemento: [endereco.complemento, [Validators.required]],
+      bairro: [endereco.bairro, [Validators.required]],
+      cep: [endereco.cep, [Validators.required]],
+      cidade:[endereco.cidade, [Validators.required]],
+      uf: [endereco.uf, [Validators.required]],
+      cliente: this.form,
+      // entidade: this.formEntid
+      });
+  }
+
   public onCancel() {
     this.router.navigate(['cliente']);
 
   }
 
   public onSubmit() {
+    if (this.formEnd.invalid) {
+
+      return
+    }
     this.serviceendereco.salvar(this.formEnd.value);
     this.router.navigate(['cliente']);
 
