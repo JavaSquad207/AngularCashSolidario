@@ -1,9 +1,10 @@
 .cantainer {
-  color: #be70a4;
+  color: #fdf4e7;
   width: auto;
   height: auto;
   margin-top: 10px;
 }
+
 
 .mat-card {
   max-width: 80%;
@@ -11,6 +12,8 @@
   text-align: center;
   margin-top: 50px;
   margin-right: 40;
+  background-color: #fcd097f6;
+  
 }
 
 .full-width {
@@ -75,3 +78,15 @@ mat-raisen-button {
   padding-left: 0.2em;
   font-size: 8pt;
 }
+
+#container {
+  background-image: url("/assets/img/formcliente.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+}
+

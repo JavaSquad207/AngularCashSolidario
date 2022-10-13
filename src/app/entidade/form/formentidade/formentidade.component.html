@@ -1,3 +1,4 @@
+<div id="container">
 <mat-card>
 
   <mat-toolbar color="primary"> Cadastro de Entidades </mat-toolbar>
@@ -10,7 +11,7 @@
           <p *ngIf="nome.invalid && nome.touched">Campo Obrigatório</p>
         </div>
       </mat-form-field>
-      
+
       <mat-form-field class="full-width" id="cnpj">
         <input matInput placeholder="CNPJ" formControlName="cnpj" class="full-width" mask="000.000.000/0000-00" required>
         <div *ngIf="cnpj.invalid && formDir.ngSubmit" class="validation-error">
@@ -79,3 +80,4 @@
     <button mat-raised-button (click)="onCancel()"> Cancelar </button>
   </mat-card-actions>
 </mat-card>
+</div>
