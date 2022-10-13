@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   irParaTelaCliente() {
     this.router.navigate(['cliente']);
-  }
+
+   }
   irParaTelaEntidade() {
     this.router.navigate(['entidade']);
   }
