@@ -7,7 +7,7 @@ html, body {
 .body-content {
   min-height: 100%;
   /* igual a altura do rodapé */
-  margin-bottom: -60px;
+  margin-bottom: 1px;
 }
 .body-content:after {
   content: "";
@@ -19,4 +19,3 @@ html, body {
   background: gray;
   margin: 0;
 }
-

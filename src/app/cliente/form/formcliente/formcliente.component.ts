@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Cliente } from '../../../shared/model/cliente';
@@ -83,27 +83,6 @@ export class FormclienteComponent implements OnInit {
   };
 
 
-  public createForm1(cliente: Cliente) {
-    this.form = new FormGroup({
-      nome: new FormControl(cliente.nome),
-      cpf: new FormControl(cliente.cpf),
-    });
-  }
-
-  public createFormend1(endereco: EndCliEnt) {
-    this.formEnd = new FormGroup({
-      logradouro: new FormControl(endereco.logradouro),
-      numero: new FormControl(endereco.numero),
-      complemento: new FormControl(endereco.complemento),
-      bairro: new FormControl(endereco.bairro),
-      cep: new FormControl(endereco.cep),
-      cidade: new FormControl(endereco.cidade),
-      uf: new FormControl(endereco.uf),
-      cliente: this.form,
-      // entidade: this.formEntid
-      });
-  }
-
   public createForm(cliente: Cliente) {
     this.form = this.formBuilder.group({
       nome: [cliente.nome, [Validators.required]],
@@ -121,7 +100,7 @@ export class FormclienteComponent implements OnInit {
       cidade:[endereco.cidade, [Validators.required]],
       uf: [endereco.uf, [Validators.required]],
       cliente: this.form,
-      // entidade: this.formEntid
+      
       });
   }
 
