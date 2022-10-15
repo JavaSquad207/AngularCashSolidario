@@ -34,17 +34,19 @@
             <mat-icon (click)="ondAdd()">add</mat-icon>
           </button>
         </mat-header-cell>
-        <!---
+
         <mat-cell *matCellDef="let element">
           <button mat-icon-button color="accent" aria-label="Editar Cliente">
-
             <mat-icon (click)="onEdit(element.id)">edit</mat-icon>
           </button>
+
+
           <button mat-icon-button color="warn" aria-label="Excluir Cliente">
             <mat-icon (click)="onDelete(element.id)">delete</mat-icon>
           </button>
+        
         </mat-cell>
-        -->
+
         <mat-cell *matCellDef="let element"></mat-cell>
 
       </ng-container>

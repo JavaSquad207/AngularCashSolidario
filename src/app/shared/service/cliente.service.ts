@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class ClienteService {
 
   private readonly API = 'http://localhost:8080/cliente';
-  
+
   constructor(private httpClient: HttpClient) {}
 
   list() {

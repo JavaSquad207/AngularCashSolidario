@@ -24,9 +24,9 @@
       </mat-form-field>
 
 
-    </form>
 
-    <form (ngSubmit)="onSubmit()" [formGroup]="formEnd" class="min-width" #formDir="ngForm">
+
+    
       <mat-form-field class="full-width" id="logradouro">
         <input matInput placeholder="RUA" formControlName="logradouro" class="full-width" required>
         <div *ngIf="logradouro.invalid && formDir.ngSubmit" class="validation-error">

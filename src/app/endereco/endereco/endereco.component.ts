@@ -9,7 +9,7 @@ import { EnderecoService } from '../../shared/service/endereco.service';
   styleUrls: ['./endereco.component.scss']
 })
 export class EnderecoComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'logradouro', 'numero', 'complemento', 'bairro', 'cep', 'cidade', 'uf', 'actions'];
+  displayedColumns: string[] = ['id', 'logradouro', 'numero', 'complemento', 'bairro', 'cep', 'cidade', 'uf', 'fk_idCliente','fk_idIdentidade' ,'actions'];
   public dataSourceEnd: Array<Endereco> = new Array();
 
   constructor(private router: Router, private enderecoService: EnderecoService) { }
