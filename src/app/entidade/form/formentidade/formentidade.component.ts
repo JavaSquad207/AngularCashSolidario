@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { EndCliEnt, Endereco } from '../../../shared/model/endereco';
+import { Endereco } from '../../../shared/model/endereco';
 import { Entidade } from '../../../shared/model/entidade';
-import { EnderecoService } from '../../../shared/service/endereco.service';
-
-
+import { EntidadeService } from './../../../shared/service/entidade.service';
 
 @Component({
   selector: 'app-formentidade',
@@ -15,94 +13,80 @@ import { EnderecoService } from '../../../shared/service/endereco.service';
 })
 export class FormentidadeComponent implements OnInit {
   form: FormGroup;
-  formEntid: FormGroup;
-  formEndEntid: FormGroup;
+
+
   public dataSourceEntidade: Array<Entidade> = new Array();
-  public dataSourceEntidadeEndereco: Array<Endereco> = new Array();
+  
   constructor(
     private formBuilder: FormBuilder,
-//    private serviceentidade: EntidadeService,
-    private serviceendereco: EnderecoService,
+    private serviceentidade: EntidadeService,
     private router: Router
     ) {
-      this.form = this.formBuilder.group({
+
+      this.form = this.formBuilder.group ({
         id: [null],
-        nome: [null],
-        cpf: [null],
-      });
-      this.formEntid = this.formBuilder.group ({
-        id: [null],
-        nome: [null],
-        cnpj: [null],
+        nome: [null,],
+        cnpj: [null,],
+        logradouro: [null,],
+        numero: [null, ],
+        complemento: [null , ],
+        bairro: [null, ],
+        cep: [null, ],
+        cidade: [null,],
+        uf: [null,],
 
       });
-      this.formEndEntid = this.formBuilder.group ({
-        logradouro: [null, [Validators.required]],
-        numero: [null, [Validators.required]],
-        complemento: [null , [Validators.required]],
-        bairro: [null, [Validators.required]],
-        cep: [null, [Validators.required]],
-        cidade: [null,[Validators.required]],
-        uf: [null, [Validators.required]],
-        entidade: this.formEntid
-      });
+
     }
 
   ngOnInit(): void {
     this.createFormEntidade(new Entidade());
-    this.createEntidadeEndereco(new EndCliEnt());
+
     this.router.navigate(['novaentidade']);
   }
 
   public createFormEntidade(entidade: Entidade){
-    this.formEntid = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       nome: [entidade.nome, [Validators.required]],
       cnpj: [entidade.cnpj, [Validators.required]],
-    });
-  }
-
-  public createEntidadeEndereco(endereco: EndCliEnt) {
-    this.formEndEntid = this.formBuilder.group ({
-      logradouro: [endereco.logradouro, [Validators.required]],
-      numero: [endereco.numero, [Validators.required]],
-      complemento: [endereco.complemento, [Validators.required]],
-      bairro: [endereco.bairro, [Validators.required]],
-      cep:  [endereco.cep, [Validators.required]],
-      cidade: [endereco.cidade, [Validators.required]],
-      uf: [endereco.uf, [Validators.required]],
-      
-      entidade: this.formEntid
+      logradouro: [entidade.logradouro, [Validators.required]],
+      numero: [entidade.numero, [Validators.required]],
+      complemento: [entidade.complemento, [Validators.required]],
+      bairro: [entidade.bairro, [Validators.required]],
+      cep:  [entidade.cep, [Validators.required]],
+      cidade: [entidade.cidade, [Validators.required]],
+      uf: [entidade.uf, [Validators.required]],
     });
   }
 
   get nome() {
-    return this.formEntid.get('nome')!;
+    return this.form.get('nome')!;
   }
 
   get cnpj() {
-    return this.formEntid.get('cnpj')!;
+    return this.form.get('cnpj')!;
   }
 
   get logradouro() {
-    return this.formEndEntid.get('logradouro')!;
+    return this.form.get('logradouro')!;
   };
   get numero() {
-    return this.formEndEntid.get('numero')!;
+    return this.form.get('numero')!;
   };
   get complemento() {
-    return this.formEndEntid.get('complemento')!;
+    return this.form.get('complemento')!;
   };
   get bairro() {
-    return this.formEndEntid.get('bairro')!;
+    return this.form.get('bairro')!;
   };
   get cep() {
-    return this.formEndEntid.get('cep')!;
+    return this.form.get('cep')!;
   };
   get cidade() {
-    return this.formEndEntid.get('cidade')!;
+    return this.form.get('cidade')!;
   };
   get uf() {
-    return this.formEndEntid.get('uf')!;
+    return this.form.get('uf')!;
   };
 
   public onCancel() {
@@ -111,9 +95,7 @@ export class FormentidadeComponent implements OnInit {
   }
 
   public onSubmit() {
-    this.serviceendereco.salvar(this.formEndEntid.value);
+    this.serviceentidade.salvar(this.form.value);
     this.router.navigate(['entidade']);
-
-
 }
 }

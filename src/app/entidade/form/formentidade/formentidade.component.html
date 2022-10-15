@@ -4,7 +4,7 @@
   <mat-toolbar color="primary"> Cadastro de Entidades </mat-toolbar>
 
   <mat-card-content>
-    <form (ngSubmit)= "onSubmit()" [formGroup]="formEntid" class="min-width" #formDir="ngForm">
+    <form (ngSubmit)= "onSubmit()" [formGroup]="form" class="min-width" #formDir="ngForm">
       <mat-form-field class="full-width" id="nome">
         <input matInput placeholder="Nome" formControlName="nome" required>
         <div *ngIf="nome.invalid && formDir.ngSubmit" class="validation-error">
@@ -20,10 +20,7 @@
       </mat-form-field>
       <p></p>
 
-    </form>
-
-    <form (ngSubmit)="onSubmit()" [formGroup]="formEndEntid" class="min-width" #formDir="ngForm">
-      <mat-form-field class="full-width" id="logradouro">
+       <mat-form-field class="full-width" id="logradouro">
         <input matInput placeholder="RUA" formControlName="logradouro" class="full-width" required>
         <div *ngIf="logradouro.invalid && formDir.ngSubmit" class="validation-error">
           <p *ngIf="logradouro.invalid && logradouro.touched">Campo Obrigatório</p>

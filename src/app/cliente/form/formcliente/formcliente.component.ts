@@ -3,8 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Cliente } from '../../../shared/model/cliente';
-import { EndCliEnt, Endereco } from '../../../shared/model/endereco';
-import { EnderecoService } from '../../../shared/service/endereco.service';
+import { ClienteService } from '../../../shared/service/cliente.service';
 
 @Component({
   selector: 'app-formcliente',
@@ -13,42 +12,31 @@ import { EnderecoService } from '../../../shared/service/endereco.service';
 })
 export class FormclienteComponent implements OnInit {
   form: FormGroup;
-  formEnd: FormGroup;
-  formEntid: FormGroup;
+
   public dataSource: Array<Cliente> = new Array();
-  public dataSourceEnd: Array<Endereco> = new Array();
+
   constructor(
     private formBuilder: FormBuilder,
-    private serviceendereco: EnderecoService,
+    private servicecliente: ClienteService,
     private router: Router
   ) {
-
-    this.formEntid = this.formBuilder.group ({
-      id: [null],
-      nome: [null,],
-      cnpj: [null,],
-
-    });
     this.form = this.formBuilder.group({
-      id:  [null],
-      nome:  [null, [Validators.required]],
-      cpf:  [null, [Validators.required]],
-    });
-    this.formEnd = this.formBuilder.group({
-      logradouro: [ null, [Validators.required]],
+      id: [null],
+      nome: [null, [Validators.required]],
+      cpf: [null, [Validators.required]],
+      logradouro: [null, [Validators.required]],
       numero: [null, [Validators.required]],
       complemento: [null, [Validators.required]],
       bairro: [null, [Validators.required]],
       cep: [null, [Validators.required]],
       cidade: [null, [Validators.required]],
       uf: [null, [Validators.required]],
-      cliente: this.form
     });
   }
 
   ngOnInit(): void {
     this.createForm(new Cliente());
-    this.createFormend(new EndCliEnt());
+
     this.router.navigate(['novocliente']);
   }
 
@@ -61,62 +49,50 @@ export class FormclienteComponent implements OnInit {
   }
 
   get logradouro() {
-    return this.formEnd.get('logradouro')!;
-  };
+    return this.form.get('logradouro')!;
+  }
   get numero() {
-    return this.formEnd.get('numero')!;
-  };
+    return this.form.get('numero')!;
+  }
   get complemento() {
-    return this.formEnd.get('complemento')!;
-  };
+    return this.form.get('complemento')!;
+  }
   get bairro() {
-    return this.formEnd.get('bairro')!;
-  };
+    return this.form.get('bairro')!;
+  }
   get cep() {
-    return this.formEnd.get('cep')!;
-  };
+    return this.form.get('cep')!;
+  }
   get cidade() {
-    return this.formEnd.get('cidade')!;
-  };
+    return this.form.get('cidade')!;
+  }
   get uf() {
-    return this.formEnd.get('uf')!;
-  };
-
+    return this.form.get('uf')!;
+  }
 
   public createForm(cliente: Cliente) {
     this.form = this.formBuilder.group({
       nome: [cliente.nome, [Validators.required]],
       cpf: [cliente.cpf, [Validators.required]],
+      logradouro: [cliente.logradouro, [Validators.required]],
+      numero: [cliente.numero, [Validators.required]],
+      complemento: [cliente.complemento, [Validators.required]],
+      bairro: [cliente.bairro, [Validators.required]],
+      cep: [cliente.cep, [Validators.required]],
+      cidade: [cliente.cidade, [Validators.required]],
+      uf: [cliente.uf, [Validators.required]],
     });
-  }
-
-  public createFormend(endereco: EndCliEnt) {
-    this.formEnd = this.formBuilder.group({
-      logradouro: [endereco.logradouro, [Validators.required]],
-      numero: [endereco.numero, [Validators.required]],
-      complemento: [endereco.complemento, [Validators.required]],
-      bairro: [endereco.bairro, [Validators.required]],
-      cep: [endereco.cep, [Validators.required]],
-      cidade:[endereco.cidade, [Validators.required]],
-      uf: [endereco.uf, [Validators.required]],
-      cliente: this.form,
-      
-      });
   }
 
   public onCancel() {
     this.router.navigate(['cliente']);
-
   }
 
   public onSubmit() {
-    if (this.formEnd.invalid) {
-
-      return
+    if (this.form.invalid) {
+      return;
     }
-    this.serviceendereco.salvar(this.formEnd.value);
+    this.servicecliente.salvar(this.form.value);
     this.router.navigate(['cliente']);
-
   }
-
 }
