@@ -18,9 +18,14 @@ export class ClienteComponent implements OnInit {
     private router: Router,
     private clienteService: ClienteService,
 
+
   ) {}
 
   ngOnInit(): void {
+
+
+
+
     this.buscarClientes();
   }
   public buscarClientes() {
@@ -51,8 +56,11 @@ export class ClienteComponent implements OnInit {
   }
 
   public ondAdd() {
+
     this.router.navigate(['novocliente']);
   }
 
-  public onEdit(id: number) {}
+  public onEdit(id: number) {
+    this.router.navigate(['editcliente/'+id]);
+  }
 }

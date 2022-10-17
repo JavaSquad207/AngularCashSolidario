@@ -22,6 +22,7 @@ import { CampanhaComponent } from './campanha/campanha/campanha.component';
 import { FormcampanhaComponent } from './campanha/form/formcampanha/formcampanha.component';
 import { MenucampanhaComponent } from './campanha/menucampanha/menucampanha/menucampanha.component';
 import { DoacaoModule } from './doacao/doacao.module';
+import { FormdoacaoComponent } from './doacao/formdoacao/formdoacao.component';
 import { EntidadeComponent } from './entidade/entidade/entidade.component';
 import { MenuentidadeComponent } from './entidade/menuentidade/menuentidade.component';
 import { FooterModule } from './shared/footer/footer.module';
@@ -29,7 +30,6 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
 import { HeaderModule } from './shared/header/header.module';
 import { HeaderComponent } from './shared/header/header/header.component';
 import { HomeModule } from './view/home/home.module';
-import { FormdoacaoComponent } from './doacao/formdoacao/formdoacao.component';
 
 @NgModule({
   declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent],

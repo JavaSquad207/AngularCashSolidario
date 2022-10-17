@@ -30,15 +30,15 @@
 
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>
-          <button mat-mini-fab color="accent" aria-label="Adicionar Cliente">
+          <button mat-mini-fab color="accent" aria-label="Adicionar Entidade">
             <mat-icon (click)="ondAdd()">add</mat-icon>
           </button>
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-icon-button color="accent" aria-label="Editar Cliente">
+          <button mat-icon-button color="accent" aria-label="Editar Entidade">
             <mat-icon (click)="onEdit(element.id)">edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" aria-label="Excluir Cliente">
+          <button mat-icon-button color="warn" aria-label="Excluir Entidade">
             <mat-icon (click)="onDelete(element.id)">delete</mat-icon>
           </button>
         </mat-cell>
