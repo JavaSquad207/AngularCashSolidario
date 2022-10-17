@@ -1,6 +1,8 @@
-import { Cliente } from './../model/cliente';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Cliente } from './../model/cliente';
 
 
 @Injectable({
@@ -35,4 +37,11 @@ export class ClienteService {
       .get(this.API + '/delete/' + id)
       .subscribe((data) => console.log(data));
   }
+
+  buscarClienteId(id: number): Observable<Cliente> {
+
+    return this.httpClient.get<Cliente>(this.API + '/clienteid/' + id);
+
+  }
+
 }

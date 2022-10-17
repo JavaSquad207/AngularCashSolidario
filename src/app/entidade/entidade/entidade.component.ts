@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Entidade } from '../../shared/model/entidade';
 import { Router } from '@angular/router';
+
+import { Entidade } from '../../shared/model/entidade';
 import { EntidadeService } from '../../shared/service/entidade.service';
-import { EnderecoService } from '../../shared/service/endereco.service';
 
 @Component({
   selector: 'app-entidade',
@@ -17,7 +17,7 @@ export class EntidadeComponent implements OnInit {
   constructor(
     private router: Router,
     private entidadeService: EntidadeService,
-    private enderecoService: EnderecoService
+
 
   ) {}
 
@@ -47,7 +47,7 @@ export class EntidadeComponent implements OnInit {
   }
 
   public onDelete(id: number): void {
-    this.dataSource = this.dataSource.filter((p) => p.id != id);
+
     this.entidadeService.excluir(id);
     this.dataSource = this.dataSource.filter((p) => p.id != id);
   }
@@ -56,6 +56,10 @@ export class EntidadeComponent implements OnInit {
     this.router.navigate(['novaentidade']);
   }
 
-  public onEdit(id: number) {}
+  public onEdit(id: number) {
+    
+    this.router.navigate(['editentidade/'+ id]);
+
+  }
 }
 

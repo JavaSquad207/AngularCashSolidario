@@ -9,4 +9,5 @@ export class Entidade {
   cep: string = '';
   cidade: string = '';
   uf: string = '';
+  endId: number = 0;
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Entidade } from '../model/entidade';
 
@@ -26,8 +27,9 @@ export class EntidadeService {
       .subscribe((data) => console.log(data));
   }
 
-  listid(id: Number) {
-    return this.httpClient.get<Entidade[]>(this.API + '/entidadeid/'+id);
+  buscarEntidadeId(id: Number):Observable<Entidade> {
+    return this.httpClient.get<Entidade>(this.API + '/entidadeid/'+id);
+  
   }
 
 

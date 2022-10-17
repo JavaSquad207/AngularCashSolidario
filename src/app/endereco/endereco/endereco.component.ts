@@ -47,6 +47,7 @@ export class EnderecoComponent implements OnInit {
     this.enderecoService.excluir(id);
     this.dataSourceEnd = this.dataSourceEnd.filter(p=> p.id != id);
 
+
   }
 
   public ondAdd() {
