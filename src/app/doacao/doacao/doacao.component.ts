@@ -54,7 +54,10 @@ export class DoacaoComponent implements OnInit {
     this.router.navigate(['novadoacao']);
   }
 
-  public onEdit(id: number) {}
+  public onEdit(id: number) {
+    this.router.navigate(['editdoacao/'+id]);
+
+  }
 
 
 }

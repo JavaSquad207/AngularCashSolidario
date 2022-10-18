@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -30,6 +30,7 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
 import { HeaderModule } from './shared/header/header.module';
 import { HeaderComponent } from './shared/header/header/header.component';
 import { HomeModule } from './view/home/home.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent],
@@ -38,10 +39,7 @@ import { HomeModule } from './view/home/home.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
     ReactiveFormsModule,
     HeaderModule,
     FooterModule,
@@ -58,7 +56,9 @@ import { HomeModule } from './view/home/home.module';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-    DoacaoModule
+    FormsModule,
+    DoacaoModule,
+    NgxMaskModule.forRoot({dropSpecialCharacters: false})
 
 
 

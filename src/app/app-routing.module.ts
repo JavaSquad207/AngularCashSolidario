@@ -11,7 +11,6 @@ import { MenuenderecoComponent } from './endereco/menuendereco/menuendereco.comp
 import { EntidadeComponent } from './entidade/entidade/entidade.component';
 import { MenuentidadeComponent } from './entidade/menuentidade/menuentidade.component';
 import { HomeComponent } from './view/home/home/home.component';
-import { FormentidadeComponent } from './entidade/form/formentidade/formentidade.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,6 +50,7 @@ const routes: Routes = [
       import('./entidade/form/form.module').then((m) => m.FormModule),
   },
 
+
   { path: 'listaentidades', component: EntidadeComponent },
   {
     path: 'menucampanha',
@@ -60,9 +60,11 @@ const routes: Routes = [
       ),
   },
   { path: 'novacampanha', component: FormcampanhaComponent },
+  { path: 'editcampanha/:id', component: FormcampanhaComponent },
   { path: 'cadastroCampanha', component: CampanhaComponent },
   { path: 'menudoacao', component: MenudoacaoComponent },
   { path: 'novadoacao', component: FormdoacaoComponent },
+  { path: 'editdoacao/:id', component: FormdoacaoComponent },
   { path: 'listadoacao', component: DoacaoComponent },
 ];
 
