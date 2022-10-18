@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Doacao } from '../model/doacao';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -35,8 +36,8 @@ export class DoacaoService {
       .subscribe((data) => console.log(data));
   }
 
-  listid(id: number) {
-    return this.httpClient.get<Doacao[]>(this.API + '/doacaoid/'+id);
+  listid(id: number): Observable<Doacao> {
+    return this.httpClient.get<Doacao>(this.API + '/doacaoid/'+id);
   }
 
 }

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Campanha } from '../model/campanha';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -31,8 +32,8 @@ export class CampanhaService {
       .subscribe((data) => console.log(data));
   }
 
-  listid(id: number) {
-    return this.httpClient.get<Campanha[]>(this.API + '/campanhaid/'+id);
+  listid(id: number): Observable<Campanha> {
+    return this.httpClient.get<Campanha>(this.API + '/campanhaid/'+id);
   }
 
 }

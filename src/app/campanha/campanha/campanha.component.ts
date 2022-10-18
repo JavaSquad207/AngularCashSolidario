@@ -53,6 +53,9 @@ export class CampanhaComponent implements OnInit {
     this.router.navigate(['novacampanha']);
   }
 
-  public onEdit(id: number) {}
+  public onEdit(id: number) {
+
+    this.router.navigate(['editcampanha/'+id]);
+  }
 
 }
