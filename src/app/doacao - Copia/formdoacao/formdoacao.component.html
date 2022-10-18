@@ -1,0 +1,57 @@
+<div id="container">
+<mat-card>
+
+  <mat-toolbar color="primary"> Cadastro de Doações </mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="doacaoform" class="min-width">
+         <mat-form-field class="full-width" >
+        <mat-label>Cliente Cadastrado</mat-label>
+        <mat-select
+            [compareWith]="compareObjects" required
+            [(ngModel)]="doacao.fkIdCliente" formControlName="fkIdCliente">
+          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+            {{cliente.id}}- {{cliente.nome}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+        <P></P>
+
+        <mat-form-field class="full-width" >
+          <mat-label>Campanha Cadastrada</mat-label>
+          <mat-select
+              [compareWith]="compareObjects" required
+              [(ngModel)]="doacao.fkIdCampanha" formControlName="fkIdCampanha">
+            <mat-option *ngFor="let campanha of campanhas" [value]="campanha.id" >
+              {{campanha.id}} - {{campanha.nome}}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+          <P></P>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Valor da Doação" formControlName="valor" class="full-width" mask="000.000.00">
+      </mat-form-field>
+      <p></p>
+
+      <mat-form-field class="full-width">
+        <mat-label>Data do Registro da Doação: </mat-label>
+        <input matInput  name="dataInicio"  [matDatepicker]="dataInicio" [(ngModel)] = "doacao.dataRegistroDoacao" formControlName="dataRegistroDoacao">
+        <mat-hint>MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="dataInicio"></mat-datepicker-toggle>
+        <mat-datepicker #dataInicio></mat-datepicker>
+      </mat-form-field>
+
+      <P></P>
+      <pre>{{doacao | json }}</pre>
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()"> Salvar </button>
+    <button mat-raised-button (click)="onCancel()"> Cancelar </button>
+  </mat-card-actions>
+</mat-card>
+
+</div>

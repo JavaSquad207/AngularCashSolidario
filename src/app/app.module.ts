@@ -31,9 +31,11 @@ import { HeaderModule } from './shared/header/header.module';
 import { HeaderComponent } from './shared/header/header/header.component';
 import { HomeModule } from './view/home/home.module';
 import { NgxMaskModule } from 'ngx-mask';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
-  declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent],
+  declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent, SidenavComponent, BodyComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

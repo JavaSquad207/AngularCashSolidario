@@ -1,0 +1,67 @@
+<!--
+<mat-toolbar color="primary">
+  <span> LISTA DE ENTIDADES </span>
+</mat-toolbar>
+
+-->
+<div id="container">
+<button mat-flat-button color="accent" (click)="menu()"> MENU </button>
+<button mat-flat-button color="primary" (click)="voltar()"> Voltar </button>
+
+<mat-card>
+  <div id="containerlista">
+
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="cabecalho"> #ID</th>
+        <td mat-cell *matCellDef="let element" >{{element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef class="cabecalho"> Nome da Entidade </th>
+        <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cnpj">
+        <th mat-header-cell *matHeaderCellDef class="cabecalho"> CNPJ </th>
+        <td mat-cell *matCellDef="let element">{{element.cnpj}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-mini-fab color="accent" aria-label="Adicionar Entidade">
+            <mat-icon (click)="ondAdd()">add</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button color="accent" aria-label="Editar Entidade">
+            <mat-icon (click)="onEdit(element.id)">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" aria-label="Excluir Entidade">
+            <mat-icon (click)="onDelete(element.id)">delete</mat-icon>
+          </button>
+        </mat-cell>
+
+        <mat-cell *matCellDef="let element"></mat-cell>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+  </div>
+
+</mat-card>
+<section id="botoes">
+  <div class="example-button-row">
+    <button mat-flat-button color="primary" id="button" (click)="buscarEntidades()"> Buscar todas </button>
+    <button mat-flat-button color="warn" id="button" (click)="limpar()"> Limpar </button>
+    <button mat-flat-button color="warn" id="button" (click)="voltar()"> Voltar </button>
+  </div>
+</section>
+<div>
+
+</div>
+</div>
