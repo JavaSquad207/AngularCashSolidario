@@ -4,8 +4,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Campanha } from 'src/app/shared/model/campanha';
 
 import { CampanhaService } from '../../../shared/service/campanha.service';
-import { Entidade } from '../../../../../AngularCashSolidario/src/app/shared/model/entidade';
-import { EntidadeService } from '../../../../../AngularCashSolidario/src/app/shared/service/entidade.service';
+
+import { Entidade } from 'src/app/shared/model/entidade';
+
+import { EntidadeService } from 'src/app/shared/service/entidade.service';
 
 @Component({
   selector: 'app-formcampanha',

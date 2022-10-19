@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 import { Doacao } from '../../shared/model/doacao';
 import { DoacaoService } from '../../shared/service/doacao.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Campanha } from '../../../../AngularCashSolidario/src/app/shared/model/campanha';
-import { Cliente } from '../../../../AngularCashSolidario/src/app/shared/model/cliente';
+
+import { Campanha } from 'src/app/shared/model/campanha';
+
+import { Cliente } from 'src/app/shared/model/cliente';
 import { CampanhaService } from '../../shared/service/campanha.service';
-import { ClienteService } from '../../../../AngularCashSolidario/src/app/shared/service/cliente.service';
+
+import { ClienteService } from 'src/app/shared/service/cliente.service';
 
 @Component({
   selector: 'app-formdoacao',
