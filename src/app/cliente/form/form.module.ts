@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +33,7 @@ import { FormclienteComponent } from './formcliente/formcliente.component';
     MatSelectModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     NgxMaskModule.forRoot()
   ],
 })

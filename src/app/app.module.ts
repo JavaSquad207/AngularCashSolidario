@@ -15,9 +15,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BodyComponent } from './body/body.component';
 import { CampanhaComponent } from './campanha/campanha/campanha.component';
 import { FormcampanhaComponent } from './campanha/form/formcampanha/formcampanha.component';
 import { MenucampanhaComponent } from './campanha/menucampanha/menucampanha/menucampanha.component';
@@ -29,10 +31,7 @@ import { FooterModule } from './shared/footer/footer.module';
 import { FooterComponent } from './shared/footer/footer/footer.component';
 import { HeaderModule } from './shared/header/header.module';
 import { HeaderComponent } from './shared/header/header/header.component';
-import { HomeModule } from './view/home/home.module';
-import { NgxMaskModule } from 'ngx-mask';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent, SidenavComponent, BodyComponent],
@@ -45,7 +44,6 @@ import { BodyComponent } from './body/body.component';
     ReactiveFormsModule,
     HeaderModule,
     FooterModule,
-    HomeModule,
     MatButtonModule,
     MatCardModule,
     MatNativeDateModule,
