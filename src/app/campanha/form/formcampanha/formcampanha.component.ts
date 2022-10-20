@@ -74,7 +74,7 @@ export class FormcampanhaComponent implements OnInit {
   public onSubmit() {
     console.log(this.form.value);
     this.servicecampanha.salvar(this.form.value);
-    this.router.navigate(['menucampanha']);
+    this.router.navigate(['cadastroCampanha']);
   }
 
   buscarEntidades()   {
