@@ -12,7 +12,8 @@ td {
 }
 
 table {
-  width: 90%;
+  width: 80%;
+
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -29,12 +30,15 @@ table {
 
 body {
   align-items: center;
+  color: red;
+
+
 }
 
 .cabecalho {
   text-align: center;
   font: bold 12pt Arial;
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 #botoes {
@@ -43,3 +47,34 @@ body {
   margin-right: auto;
   text-align: center;
   }
+
+  #container {
+    width: calc(100% - 5rem);
+    height: 100vh;
+    margin-left: 5rem;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all .5s ease;
+    background: grey;
+    padding: 3rem;
+    //background-image: url("/assets/img/Logo.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:100%;
+    
+    
+  }
+  .mat-flat-button{
+    color: white;
+    background-color: grey;
+    border: 1px solid;
+    
+  }
+  .mat-mini-fab{
+    color: white;
+    background-color: grey;
+  }
+  
+

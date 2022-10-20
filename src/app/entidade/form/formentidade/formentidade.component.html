@@ -1,0 +1,80 @@
+<div id="container">
+<mat-card>
+
+  <mat-toolbar color="primary"> Cadastro de Entidades </mat-toolbar>
+
+  <mat-card-content>
+    <form (ngSubmit)= "onSubmit()" [formGroup]="form" class="min-width" #formDir="ngForm">
+      <mat-form-field class="full-width" id="nome">
+        <input matInput placeholder="Nome" formControlName="nome" required>
+        <div *ngIf="nome.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="nome.invalid && nome.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" id="cnpj">
+        <input matInput placeholder="CNPJ" formControlName="cnpj" class="full-width" mask="000.000.000/0000-00" required>
+        <div *ngIf="cnpj.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="cnpj.invalid && cnpj.touched">Campo Obrigatório</p>
+          </div>
+      </mat-form-field>
+      <p></p>
+
+       <mat-form-field class="full-width" id="logradouro">
+        <input matInput placeholder="RUA" formControlName="logradouro" class="full-width" required>
+        <div *ngIf="logradouro.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="logradouro.invalid && logradouro.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" id="numero">
+        <input matInput placeholder="Número" formControlName="numero" class="full-width" required class="numero">
+        <div *ngIf="numero.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="numero.invalid && numero.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="full-width" id="complemento">
+        <input matInput placeholder="Complemento" formControlName="complemento" class="full-width" required>
+        <div *ngIf="complemento.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="complemento.invalid && complemento.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" id="bairro">
+        <input matInput placeholder="Bairro" formControlName="bairro" class="full-width" required>
+        <div *ngIf="bairro.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="bairro.invalid && bairro.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" id="cep">
+        <input matInput placeholder="CEP" formControlName="cep" class="full-width" mask="00.000-000" required>
+        <div *ngIf="cep.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="cep.invalid && cep.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" id="cidade">
+        <input matInput placeholder="Cidade" formControlName="cidade" class="full-width" required>
+        <div *ngIf="cidade.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="cidade.invalid && cidade.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" id="uf">
+
+        <input matInput placeholder="UF" formControlName="uf" class="full-width" required class="uf">
+        <div *ngIf="uf.invalid && formDir.ngSubmit" class="validation-error">
+          <p *ngIf="uf.invalid && uf.touched">Campo Obrigatório</p>
+        </div>
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()"> Salvar </button>
+    <button mat-raised-button (click)="onCancel()"> Cancelar </button>
+  </mat-card-actions>
+</mat-card>
+</div>

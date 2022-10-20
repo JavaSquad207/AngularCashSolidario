@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClienteService } from 'src/app/shared/service/cliente.service';
 
-import { ClienteService } from '../../service/cliente/cliente.service';
-import { Cliente } from '../shared/cliente';
+import { Cliente } from './../../shared/model/cliente';
 
 @Component({
   selector: 'app-cliente',
@@ -14,12 +14,20 @@ export class ClienteComponent implements OnInit {
 
   public dataSource: Array<Cliente> = new Array();
 
-  constructor(private router: Router, private clienteService: ClienteService) {}
+  constructor(
+    private router: Router,
+    private clienteService: ClienteService,
+
+
+  ) {}
 
   ngOnInit(): void {
+
+
+
+
     this.buscarClientes();
   }
-
   public buscarClientes() {
     this.clienteService.list().subscribe(
       (resultado) => {
@@ -32,7 +40,7 @@ export class ClienteComponent implements OnInit {
   }
 
   public voltar() {
-    this.router.navigate(['telacliente']);
+    this.router.navigate(['']);
   }
   public limpar() {
     this.dataSource = new Array();
@@ -42,14 +50,17 @@ export class ClienteComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  public onDelete(id: Number) {
-    location.reload();
+  public onDelete(id: number): void {
     this.clienteService.excluir(id);
+    this.dataSource = this.dataSource.filter((p) => p.id != id);
   }
 
   public ondAdd() {
+
     this.router.navigate(['novocliente']);
   }
 
-  public onEdit(id: Number) {}
+  public onEdit(id: number) {
+    this.router.navigate(['editcliente/'+id]);
+  }
 }
