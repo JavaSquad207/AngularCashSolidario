@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CampanhaComponent } from './campanha/campanha/campanha.component';
 import { FormcampanhaComponent } from './campanha/form/formcampanha/formcampanha.component';
 import { MenuComponent } from './cliente/menu/menu.component';
+import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { DoacaoComponent } from './doacao/doacao/doacao.component';
 import { FormdoacaoComponent } from './doacao/formdoacao/formdoacao.component';
 import { MenudoacaoComponent } from './doacao/menudoacao/menudoacao.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'novadoacao', component: FormdoacaoComponent },
   { path: 'editdoacao/:id', component: FormdoacaoComponent },
   { path: 'listadoacao', component: DoacaoComponent },
+  {path: 'configuracao', component: ConfiguracaoComponent}
 ];
 
 @NgModule({

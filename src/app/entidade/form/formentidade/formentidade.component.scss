@@ -11,8 +11,9 @@
   text-align: center;
   margin-top: 50px;
   margin-right: 40;
-  background-color: #ffccbc;
-  opacity: 0.8;
+  background-color: white;
+  //opacity: 0.8;
+  box-shadow: 0 .25rem .5rem #e6edef;
 }
 
 .full-width {
@@ -86,12 +87,21 @@ mat-raisen-button {
   position: relative;
   top: 0;
   transition: all .5s ease;
-  background: #f4f7fa;
+  background: grey;
   padding: 3rem;
-  background-image: url("/assets/img/Logo.png");
+  //background-image: url("/assets/img/Logo.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
   height:100%;
 
+}
+.mat-raised-button {
+  background-color: grey;
+  color: white;
+}
+
+.mat-toolbar{
+background-color: grey;
+color: white;
 }
