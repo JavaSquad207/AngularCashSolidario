@@ -1,7 +1,7 @@
 <div id="container">
   <mat-card>
 
-    <mat-toolbar color="primary"> Cadastro de Clientes </mat-toolbar>
+    <mat-toolbar> Cadastro de Clientes </mat-toolbar>
 
     <mat-card-content>
       <form (ngSubmit)="onSubmit()" [formGroup]="form" class="min-width" #formDir="ngForm">
@@ -76,7 +76,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onSubmit()"> Salvar </button>
+      <button mat-raised-button (click)="onSubmit()"> Salvar </button>
       <button mat-raised-button (click)="onCancel()"> Cancelar </button>
     </mat-card-actions>
   </mat-card>

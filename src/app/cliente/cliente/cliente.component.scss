@@ -38,7 +38,7 @@ body {
 .cabecalho {
   text-align: center;
   font: bold 12pt Arial;
-  color: rgb(153, 4, 74);
+  color: black;
 }
 
 #botoes {
@@ -56,12 +56,25 @@ body {
     position: relative;
     top: 0;
     transition: all .5s ease;
-    background: #f4f7fa;
+    background: grey;
     padding: 3rem;
-    background-image: url("/assets/img/Logo.png");
+    //background-image: url("/assets/img/Logo.png");
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
     height:100%;
-
+    
+    
   }
+  .mat-flat-button{
+    color: white;
+    background-color: grey;
+    border: 1px solid;
+    
+  }
+  .mat-mini-fab{
+    color: white;
+    background-color: grey;
+  }
+  
+

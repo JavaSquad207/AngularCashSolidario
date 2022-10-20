@@ -29,4 +29,9 @@ export const navbarData = [
         icon: 'fal fa-chart-bar',
         label: 'Menu Doação'
     },    
+    {
+        routeLink: 'configuracao',
+        icon: 'fal fa-cogs',
+        label: 'Configuração'
+    },   
 ];

@@ -32,9 +32,10 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
 import { HeaderModule } from './shared/header/header.module';
 import { HeaderComponent } from './shared/header/header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 
 @NgModule({
-  declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent, SidenavComponent, BodyComponent],
+  declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent, SidenavComponent, BodyComponent, ConfiguracaoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
