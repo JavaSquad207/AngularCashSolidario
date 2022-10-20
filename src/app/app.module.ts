@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,6 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
+import localePt from '@angular/common/locales/pt';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,9 +36,12 @@ import { HeaderComponent } from './shared/header/header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 
+
+registerLocaleData(localePt, 'pt');
 @NgModule({
   declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent, SidenavComponent, BodyComponent, ConfiguracaoComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -64,7 +69,18 @@ import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 
 
   ],
-  providers: [],
+  providers: [
+
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    },
+
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

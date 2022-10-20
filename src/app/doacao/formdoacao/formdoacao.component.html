@@ -7,10 +7,8 @@
     <form [formGroup]="doacaoform" class="min-width">
          <mat-form-field class="full-width" >
         <mat-label>Cliente Cadastrado</mat-label>
-        <mat-select
-            [compareWith]="compareObjects" required
-            [(ngModel)]="doacao.fkIdCliente" formControlName="fkIdCliente">
-          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+        <mat-select     formControlName="fkIdCliente">
+          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id"  compareWith="compareObjects">
             {{cliente.id}}- {{cliente.nome}}
           </mat-option>
         </mat-select>
@@ -20,9 +18,9 @@
         <mat-form-field class="full-width" >
           <mat-label>Campanha Cadastrada</mat-label>
           <mat-select
-              [compareWith]="compareObjects" required
-              [(ngModel)]="doacao.fkIdCampanha" formControlName="fkIdCampanha">
-            <mat-option *ngFor="let campanha of campanhas" [value]="campanha.id" >
+
+             formControlName="fkIdCampanha">
+            <mat-option *ngFor="let campanha of campanhas" [value]="campanha.id" compareWith="compareObjects">
               {{campanha.id}} - {{campanha.nome}}
             </mat-option>
           </mat-select>
@@ -30,15 +28,15 @@
           <P></P>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Valor da Doação" formControlName="valor" class="full-width" mask="000.000.00">
+        <input matInput placeholder="Valor da Doação" formControlName="valor" class="full-width" >
       </mat-form-field>
       <p></p>
 
       <mat-form-field class="full-width">
         <mat-label>Data do Registro da Doação: </mat-label>
-        <input matInput  name="dataInicio"  [matDatepicker]="dataInicio" [(ngModel)] = "doacao.dataRegistroDoacao" formControlName="dataRegistroDoacao">
+        <input matInput type="date" name="dataInicio" formControlName="dataRegistroDoacao">
         <mat-hint>MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="dataInicio"></mat-datepicker-toggle>
+
         <mat-datepicker #dataInicio></mat-datepicker>
       </mat-form-field>
 
