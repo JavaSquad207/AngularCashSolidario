@@ -18,7 +18,9 @@ import { ClienteService } from 'src/app/shared/service/cliente.service';
 
 @Component({
   selector: 'app-formdoacao',
-  templateUrl: './formdoacao.component.html',
+  templateUrl: './formdoacao.component.html'   ,
+
+
   styleUrls: ['./formdoacao.component.scss'],
 })
 export class FormdoacaoComponent implements OnInit {
@@ -41,7 +43,7 @@ export class FormdoacaoComponent implements OnInit {
       id: [null, [Validators.required]],
       fkIdCliente: [this.idCliente, [Validators.required]],
       fkIdCampanha: [this.idCampanha, [Validators.required]],
-      valor: [null, [Validators.required]],
+      valor: [Number],
       dataRegistroDoacao: [null, [Validators.required]],
     });
   }

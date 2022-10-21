@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
 import localePt from '@angular/common/locales/pt';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { TextMaskModule } from 'angular2-text-mask';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,6 +65,7 @@ registerLocaleData(localePt, 'pt');
     MatTableModule,
     MatToolbarModule,
     FormsModule,
+    TextMaskModule,
     DoacaoModule,
     NgxMaskModule.forRoot({dropSpecialCharacters: false})
 
