@@ -9,7 +9,7 @@ import { CampanhaService } from '../../shared/service/campanha.service';
   styleUrls: ['./campanha.component.scss']
 })
 export class CampanhaComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nome', 'fkIdentidade', 'dataInicio','dataFinal','actions'];
+  displayedColumns: string[] = ['id', 'nome', 'fkIdentidade', 'dataInicio','dataFinal','somaCampanha','actions'];
 
   public dataSource: Array<Campanha> = new Array();
 

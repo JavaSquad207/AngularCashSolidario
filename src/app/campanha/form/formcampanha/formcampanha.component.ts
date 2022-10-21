@@ -33,6 +33,7 @@ export class FormcampanhaComponent implements OnInit {
       nome: [null, [Validators.required]],
       dataInicio: [null, [Validators.required]],
       dataFinal: [null, [Validators.required]],
+      somaCampanha: [null, [Validators.required]]
     });
   }
 
@@ -64,6 +65,7 @@ export class FormcampanhaComponent implements OnInit {
       nome: new FormControl(campanha.nome),
       dataInicio: new FormControl(campanha.dataInicio),
       dataFinal: new FormControl(campanha.dataFinal),
+      somaCampanha: new FormControl(campanha.somaCampanha)
     });
   }
 
@@ -104,7 +106,8 @@ export class FormcampanhaComponent implements OnInit {
       nome: campanha.nome,
       fkIdentidade: campanha.fkIdentidade,
       dataInicio: campanha.dataInicio,
-      dataFinal: campanha.dataFinal
+      dataFinal: campanha.dataFinal,
+      somaCampanha: campanha.somaCampanha
     });
   }
 }
