@@ -23,7 +23,7 @@
 
         <mat-form-field class="full-width">
           <mat-label>Data de Início da Campanha: </mat-label>
-          <input matInput  type="date" name="dataInicio"  formControlName="dataInicio">
+          <input matInput  type="date" name="dataInicio"  formControlName="dataInicio" required="">
           <mat-hint>MM/YYYY</mat-hint>
 
           <mat-datepicker #dataInicio></mat-datepicker>
@@ -33,7 +33,7 @@
 
         <mat-form-field class="full-width">
           <mat-label>Data de Final da Campanha: </mat-label>
-          <input matInput type="date" name="dataFinal" formControlName="dataFinal">
+          <input matInput type="date" name="dataFinal" formControlName="dataFinal" required="">
           <mat-hint>MM/YYYY</mat-hint>
 
           <mat-datepicker #dataFinal></mat-datepicker>
