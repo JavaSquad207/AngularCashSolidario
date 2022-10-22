@@ -35,7 +35,7 @@
 
         <mat-form-field>
           <input matInput currencyMask formControlName="valor"
-            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="Valor da Doação"
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: true }" placeholder="Valor da Doação"
             formControlName="valor">
         </mat-form-field>
         <p></p>
