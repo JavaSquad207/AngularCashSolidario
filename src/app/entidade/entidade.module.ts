@@ -15,12 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { EntidadeRoutingModule } from './entidade-routing.module';
 
-
 @NgModule({
-  declarations: [
-
-
-     ],
+  declarations: [],
   imports: [
     CommonModule,
     EntidadeRoutingModule,
@@ -43,8 +39,6 @@ import { EntidadeRoutingModule } from './entidade-routing.module';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-
-
-         ]
+  ],
 })
-export class EntidadeModule { }
+export class EntidadeModule {}

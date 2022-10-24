@@ -18,7 +18,7 @@ import { ClienteformRoutingModule } from './clienteform-routing.module';
     MatFormFieldModule,
     MatInputModule,
     AppMaterialModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
 })
 export class ClienteformModule {}

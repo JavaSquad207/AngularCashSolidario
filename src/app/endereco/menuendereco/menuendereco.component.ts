@@ -1,10 +1,10 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menuendereco',
   templateUrl: './menuendereco.component.html',
-  styleUrls: ['./menuendereco.component.scss']
+  styleUrls: ['./menuendereco.component.scss'],
 })
 export class MenuenderecoComponent implements OnInit {
   constructor(private router: Router) {}
@@ -21,5 +21,4 @@ export class MenuenderecoComponent implements OnInit {
   public novoEndereco() {
     this.router.navigate(['novoendereco']);
   }
-
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Entidade } from '../../../shared/model/entidade';
 import { EntidadeService } from './../../../shared/service/entidade.service';
@@ -43,20 +43,16 @@ export class FormentidadeComponent implements OnInit {
       let id: number = +params['id'];
 
       if (id) {
-        //se o id do cliente existe então estamos alterando
-
         const dado$ = this.serviceentidade.buscarEntidadeId(id);
         dado$.subscribe((entidade) => {
           this.updatedFormEntidade(entidade);
         });
-        
+
         this.createForm(new Entidade());
       } else {
         this.createForm(new Entidade());
       }
     });
-
-
   }
 
   get nome() {
@@ -135,8 +131,6 @@ export class FormentidadeComponent implements OnInit {
       cidade: entidade.cidade,
       uf: entidade.uf,
       endId: entidade.endId,
-
-
     });
   }
 }

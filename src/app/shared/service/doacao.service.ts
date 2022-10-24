@@ -1,14 +1,13 @@
-import { Observable } from 'rxjs';
-import { Doacao } from '../model/doacao';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { Doacao } from '../model/doacao';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DoacaoService {
-
   private readonly API = 'http://localhost:8080/doacao';
 
   constructor(private httpClient: HttpClient) {}
@@ -24,11 +23,9 @@ export class DoacaoService {
       .subscribe((data) => {
         console.log(data);
         dataCliente = data;
-
       });
-      return dataCliente!;
+    return dataCliente!;
   }
-
 
   excluir(id: number) {
     return this.httpClient
@@ -37,7 +34,6 @@ export class DoacaoService {
   }
 
   listid(id: number): Observable<Doacao> {
-    return this.httpClient.get<Doacao>(this.API + '/doacaoid/'+id);
+    return this.httpClient.get<Doacao>(this.API + '/doacaoid/' + id);
   }
-
 }

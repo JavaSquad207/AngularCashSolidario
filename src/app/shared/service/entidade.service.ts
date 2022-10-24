@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { Entidade } from '../model/entidade';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EntidadeService {
   private readonly API = 'http://localhost:8080/entidade';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   list() {
     return this.httpClient.get<Entidade[]>(this.API + '/listatodos');
@@ -27,10 +27,7 @@ export class EntidadeService {
       .subscribe((data) => console.log(data));
   }
 
-  buscarEntidadeId(id: Number):Observable<Entidade> {
-    return this.httpClient.get<Entidade>(this.API + '/entidadeid/'+id);
-  
+  buscarEntidadeId(id: Number): Observable<Entidade> {
+    return this.httpClient.get<Entidade>(this.API + '/entidadeid/' + id);
   }
-
-
 }

@@ -5,17 +5,13 @@
   margin-top: 50px;
   margin-right: 40;
   background-color: white;
-  //opacity: 0.8;
   box-shadow: 0 .25rem .5rem #e6edef;
 }
 
 .full-width {
-
   width: 100%;
   margin-top: 10px;
-
 }
-
 
 .min-width {
   width: 100%;
@@ -23,7 +19,6 @@
 }
 
 mat-raisen-button {
-
   margin-top: 50px;
 }
 
@@ -37,19 +32,18 @@ mat-raisen-button {
   transition: all .5s ease;
   background: grey;
   padding: 3rem;
- // background-image: url("/assets/img/Logo.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  height:100%;
-
+  height: 100%;
 }
+
 .mat-raised-button {
   background-color: grey;
   color: white;
 }
 
-.mat-toolbar{
-background-color: grey;
-color: white;
+.mat-toolbar {
+  background-color: grey;
+  color: white;
 }

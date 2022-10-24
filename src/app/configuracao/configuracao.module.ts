@@ -12,17 +12,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { ConfiguracaoRoutingModule } from './configuracao-routing.module';
 
-
 @NgModule({
-  declarations: [
-
-
-
-  ],
+  declarations: [],
   imports: [
-
     CommonModule,
     ConfiguracaoRoutingModule,
     MatCardModule,
@@ -44,6 +39,6 @@ import { ConfiguracaoRoutingModule } from './configuracao-routing.module';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-  ]
+  ],
 })
-export class CampanhaModule { }
+export class CampanhaModule {}

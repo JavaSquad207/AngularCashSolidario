@@ -1,18 +1,19 @@
-import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
 import { NgxMaskModule } from 'ngx-mask';
+
 import { FormRoutingModule } from './form-routing.module';
 import { FormclienteComponent } from './formcliente/formcliente.component';
 
@@ -34,7 +35,7 @@ import { FormclienteComponent } from './formcliente/formcliente.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
   ],
 })
 export class FormModule {}

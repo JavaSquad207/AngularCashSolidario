@@ -1,7 +1,7 @@
 export class Entidade {
   id: number = 0;
-  nome: String = "";
-  cnpj: String = "";
+  nome: String = '';
+  cnpj: String = '';
   logradouro: string = '';
   numero: number = 0;
   complemento: string = '';

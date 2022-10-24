@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Campanha } from 'src/app/shared/model/campanha';
+import { Entidade } from 'src/app/shared/model/entidade';
+import { EntidadeService } from 'src/app/shared/service/entidade.service';
 
 import { CampanhaService } from '../../../shared/service/campanha.service';
-
-import { Entidade } from 'src/app/shared/model/entidade';
-
-import { EntidadeService } from 'src/app/shared/service/entidade.service';
 
 @Component({
   selector: 'app-formcampanha',
@@ -25,7 +23,7 @@ export class FormcampanhaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private servicecampanha: CampanhaService,
     private serviceentidade: EntidadeService,
-    private activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute
   ) {
     this.form = this.formBuilder.group({
       id: [null, [Validators.required]],
@@ -33,7 +31,7 @@ export class FormcampanhaComponent implements OnInit {
       nome: [null, [Validators.required]],
       dataInicio: [null, [Validators.required]],
       dataFinal: [null, [Validators.required]],
-      somaCampanha: [null, [Validators.required]]
+      somaCampanha: [null, [Validators.required]],
     });
   }
 
@@ -42,12 +40,11 @@ export class FormcampanhaComponent implements OnInit {
       let id: number = +params['id'];
 
       if (id) {
-        //se o id do cliente existe então estamos alterando
         const dado$ = this.servicecampanha.listid(id);
         dado$.subscribe((campanha) => {
           this.updatedFormCampanha(campanha);
         });
-        console.log(this.campanha)
+        console.log(this.campanha);
 
         this.createForm(new Campanha());
       } else {
@@ -65,7 +62,7 @@ export class FormcampanhaComponent implements OnInit {
       nome: new FormControl(campanha.nome),
       dataInicio: new FormControl(campanha.dataInicio),
       dataFinal: new FormControl(campanha.dataFinal),
-      somaCampanha: new FormControl(campanha.somaCampanha)
+      somaCampanha: new FormControl(campanha.somaCampanha),
     });
   }
 
@@ -79,26 +76,20 @@ export class FormcampanhaComponent implements OnInit {
     this.router.navigate(['cadastroCampanha']);
   }
 
-  buscarEntidades()   {
+  buscarEntidades() {
     this.serviceentidade.list().subscribe(
-      resultado => {
+      (resultado) => {
         this.entidades = resultado;
-
       },
-      erro => {
-        console.log("DEU ERRO. Causa: " + erro)
+      (erro) => {
+        console.log('DEU ERRO. Causa: ' + erro);
       }
-    )
-    ;
-
+    );
   }
-
 
   compareObjects(o1: any, o2: any): boolean {
     return o1.name === o2.name && o1.id === o2.id;
   }
-
-
 
   public updatedFormCampanha(campanha: Campanha) {
     this.form.patchValue({
@@ -107,7 +98,7 @@ export class FormcampanhaComponent implements OnInit {
       fkIdentidade: campanha.fkIdentidade,
       dataInicio: campanha.dataInicio,
       dataFinal: campanha.dataFinal,
-      somaCampanha: campanha.somaCampanha
+      somaCampanha: campanha.somaCampanha,
     });
   }
 }

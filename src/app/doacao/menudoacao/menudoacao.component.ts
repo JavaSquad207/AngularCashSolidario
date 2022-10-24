@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-menudoacao',
   templateUrl: './menudoacao.component.html',
-  styleUrls: ['./menudoacao.component.scss']
+  styleUrls: ['./menudoacao.component.scss'],
 })
 export class MenudoacaoComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   Menu() {
     this.router.navigate(['']);
@@ -21,11 +19,7 @@ export class MenudoacaoComponent implements OnInit {
     this.router.navigate(['novadoacao']);
   }
 
-  cadDoacao(){
+  cadDoacao() {
     this.router.navigate(['listadoacao']);
-
   }
-
-
-
 }

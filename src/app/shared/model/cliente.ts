@@ -10,10 +10,4 @@ export class Cliente {
   cidade: string = '';
   uf: string = '';
   endId: number = 0;
-
 }
-
-
-
-
-

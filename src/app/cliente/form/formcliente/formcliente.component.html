@@ -9,18 +9,14 @@
           <input matInput placeholder="Nome" formControlName="nome" required>
           <div *ngIf="nome.invalid && formDir.ngSubmit" class="validation-error">
             <p *ngIf="nome.invalid && nome.touched">Campo Obrigatório</p>
-            <!--<p *ngIf="nome.errors?.['maxlength']">O nome é obrigatório</p>-->
-            <!--<p *ngIf="nome.errors?.['required']">O nome é obrigatório</p>-->
           </div>
         </mat-form-field>
-
 
         <mat-form-field class="full-width" id="cpf">
           <input matInput placeholder="CPF" formControlName="cpf" class="full-width" mask="000.000.000-00" required>
           <div *ngIf="cpf.invalid && formDir.ngSubmit" class="validation-error">
             <p *ngIf="cpf.invalid && cpf.touched">Campo Obrigatório</p>
           </div>
-
         </mat-form-field>
 
         <mat-form-field class="full-width" id="logradouro">
@@ -65,7 +61,6 @@
         </mat-form-field>
 
         <mat-form-field class="full-width" id="uf">
-
           <input matInput placeholder="UF" formControlName="uf" class="full-width" required class="uf">
           <div *ngIf="uf.invalid && formDir.ngSubmit" class="validation-error">
             <p *ngIf="uf.invalid && uf.touched">Campo Obrigatório</p>

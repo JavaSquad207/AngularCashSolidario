@@ -28,7 +28,6 @@ export class EnderecoService {
   }
 
   listid(id: number) {
-    
     return this.httpClient.get<Endereco[]>(this.API + '/enderecoid/'+id);
   }
 }

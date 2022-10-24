@@ -38,10 +38,22 @@ import { HeaderModule } from './shared/header/header.module';
 import { HeaderComponent } from './shared/header/header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
-
 registerLocaleData(localePt, 'pt');
 @NgModule({
-  declarations: [MenuentidadeComponent ,AppComponent, FooterComponent, HeaderComponent, EntidadeComponent, MenucampanhaComponent, FormcampanhaComponent, CampanhaComponent, FormdoacaoComponent, SidenavComponent, BodyComponent, ConfiguracaoComponent],
+  declarations: [
+    MenuentidadeComponent,
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    EntidadeComponent,
+    MenucampanhaComponent,
+    FormcampanhaComponent,
+    CampanhaComponent,
+    FormdoacaoComponent,
+    SidenavComponent,
+    BodyComponent,
+    ConfiguracaoComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -68,21 +80,17 @@ registerLocaleData(localePt, 'pt');
     FormsModule,
     TextMaskModule,
     DoacaoModule,
-    NgxMaskModule.forRoot({dropSpecialCharacters: false})
-
-
-
+    NgxMaskModule.forRoot({ dropSpecialCharacters: false }),
   ],
   providers: [
-
     {
       provide: LOCALE_ID,
-      useValue: 'pt'
+      useValue: 'pt',
     },
 
     {
       provide: DEFAULT_CURRENCY_CODE,
-      useValue: 'BRL'
+      useValue: 'BRL',
     },
   ],
   bootstrap: [AppComponent],
