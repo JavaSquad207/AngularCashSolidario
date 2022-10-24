@@ -17,7 +17,6 @@ export class DoacaoComponent implements OnInit {
   ngOnInit(): void {
     this.buscarDoacoes();
   }
-
   public buscarDoacoes() {
     this.doacaoService.list().subscribe(
       (resultado) => {
