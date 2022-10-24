@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConfiguracaoService } from '../shared/service/configuracao.service';
 
+import { ConfiguracaoService } from '../shared/service/configuracao.service';
 
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
-  styleUrls: ['./configuracao.component.scss']
+  styleUrls: ['./configuracao.component.scss'],
 })
 export class ConfiguracaoComponent implements OnInit {
-
   public voltar() {
     this.router.navigate(['']);
   }
@@ -19,18 +18,11 @@ export class ConfiguracaoComponent implements OnInit {
   public onCancel() {
     this.router.navigate(['']);
   }
- 
 
   constructor(
     private router: Router,
-    private configuracaoService: ConfiguracaoService,
+    private configuracaoService: ConfiguracaoService
   ) {}
-    
-  ngOnInit(): void {
-   
-  }
- 
 
+  ngOnInit(): void {}
 }
-
-

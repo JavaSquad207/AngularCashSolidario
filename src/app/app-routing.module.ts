@@ -51,7 +51,6 @@ const routes: Routes = [
       import('./entidade/form/form.module').then((m) => m.FormModule),
   },
 
-
   { path: 'listaentidades', component: EntidadeComponent },
   {
     path: 'menucampanha',
@@ -67,7 +66,7 @@ const routes: Routes = [
   { path: 'novadoacao', component: FormdoacaoComponent },
   { path: 'editdoacao/:id', component: FormdoacaoComponent },
   { path: 'listadoacao', component: DoacaoComponent },
-  {path: 'configuracao', component: ConfiguracaoComponent}
+  { path: 'configuracao', component: ConfiguracaoComponent },
 ];
 
 @NgModule({

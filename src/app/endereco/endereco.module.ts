@@ -11,9 +11,7 @@ import { EnderecoComponent } from './endereco/endereco.component';
 import { MenuenderecoComponent } from './menuendereco/menuendereco.component';
 
 @NgModule({
-  declarations: [
-    MenuenderecoComponent,
-    EnderecoComponent],
+  declarations: [MenuenderecoComponent, EnderecoComponent],
   imports: [
     CommonModule,
     EnderecoRoutingModule,
@@ -22,6 +20,6 @@ import { MenuenderecoComponent } from './menuendereco/menuendereco.component';
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
-  ]
+  ],
 })
-export class EnderecoModule { }
+export class EnderecoModule {}

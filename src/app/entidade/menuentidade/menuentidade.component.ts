@@ -4,28 +4,22 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-menuentidade',
   templateUrl: './menuentidade.component.html',
-  styleUrls: ['./menuentidade.component.scss']
+  styleUrls: ['./menuentidade.component.scss'],
 })
 export class MenuentidadeComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  public Menu() {
+    this.router.navigate(['']);
   }
 
+  public novaEntidade() {
+    this.router.navigate(['novaentidade']);
+  }
 
-public Menu() {
-  this.router.navigate(['']);
-}
-
-public novaEntidade() {
-  this.router.navigate(['novaentidade']);
-
-
-}
-
-public cadEntidade() {
-  this.router.navigate(['listaentidades']);
-
-}
+  public cadEntidade() {
+    this.router.navigate(['listaentidades']);
+  }
 }

@@ -45,10 +45,7 @@ import { FormentidadeComponent } from './formentidade/formentidade.component';
     MatTableModule,
     MatToolbarModule,
     FormsModule,
-    NgxMaskModule.forRoot()
-
-
-
+    NgxMaskModule.forRoot(),
   ],
 })
 export class FormModule {}

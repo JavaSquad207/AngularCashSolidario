@@ -29,17 +29,16 @@
           <mat-label>Data do Registro da Doação: </mat-label>
           <input matInput type="date" name="dataInicio" formControlName="dataRegistroDoacao">
           <mat-hint>DD/MM/YYYY</mat-hint>
-
         </mat-form-field>
         <P></P>
 
         <mat-form-field>
           <input matInput currencyMask formControlName="valor"
-            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: true }" placeholder="Valor da Doação"
-            formControlName="valor">
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: true }"
+            placeholder="Valor da Doação" formControlName="valor">
         </mat-form-field>
         <p></p>
-        <!--<pre>{{doacao | json }}</pre>-->
+
       </form>
 
     </mat-card-content>

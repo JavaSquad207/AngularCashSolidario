@@ -15,15 +15,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CampanhaRoutingModule } from './campanha-routing.module';
 
-
 @NgModule({
-  declarations: [
-
-
-
-  ],
+  declarations: [],
   imports: [
-
     CommonModule,
     CampanhaRoutingModule,
     MatCardModule,
@@ -45,6 +39,6 @@ import { CampanhaRoutingModule } from './campanha-routing.module';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-  ]
+  ],
 })
-export class CampanhaModule { }
+export class CampanhaModule {}

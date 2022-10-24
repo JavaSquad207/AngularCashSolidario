@@ -1,19 +1,21 @@
 * {
   margin: 0;
 }
-html, body {
+
+html,
+body {
   height: 100%;
 }
+
 .body-content {
   min-height: 100%;
-  /* igual a altura do rodapé */
   margin-bottom: 1px;
 }
+
 .body-content:after {
   content: "";
   display: block;
 }
-
 
 .site-footer {
   background: gray;

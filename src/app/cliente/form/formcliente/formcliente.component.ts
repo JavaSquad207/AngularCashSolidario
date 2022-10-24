@@ -43,14 +43,11 @@ export class FormclienteComponent implements OnInit {
       let id: number = +params['id'];
 
       if (id) {
-        //se o id do cliente existe então estamos alterando
-
         const dado$ = this.servicecliente.buscarClienteId(id);
         dado$.subscribe((cliente) => {
           this.updatedFormCliente(cliente);
         });
 
-        
         this.createForm(new Cliente());
       } else {
         this.createForm(new Cliente());

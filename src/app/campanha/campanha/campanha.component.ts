@@ -6,17 +6,24 @@ import { CampanhaService } from '../../shared/service/campanha.service';
 @Component({
   selector: 'app-campanha',
   templateUrl: './campanha.component.html',
-  styleUrls: ['./campanha.component.scss']
+  styleUrls: ['./campanha.component.scss'],
 })
 export class CampanhaComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nome', 'fkIdentidade', 'dataInicio','dataFinal','somaCampanha','actions'];
+  displayedColumns: string[] = [
+    'id',
+    'nome',
+    'fkIdentidade',
+    'dataInicio',
+    'dataFinal',
+    'somaCampanha',
+    'actions',
+  ];
 
   public dataSource: Array<Campanha> = new Array();
 
   constructor(
     private router: Router,
-    private campanhaService: CampanhaService,
-
+    private campanhaService: CampanhaService
   ) {}
 
   ngOnInit(): void {
@@ -54,8 +61,6 @@ export class CampanhaComponent implements OnInit {
   }
 
   public onEdit(id: number) {
-
-    this.router.navigate(['editcampanha/'+id]);
+    this.router.navigate(['editcampanha/' + id]);
   }
-
 }

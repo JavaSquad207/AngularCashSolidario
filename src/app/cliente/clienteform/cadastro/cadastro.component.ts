@@ -35,9 +35,11 @@ export class CadastroComponent implements OnInit {
       cpf: new FormControl(cliente.cpf),
     });
   }
+
   public onCancel() {
     this.router.navigate(['menucliente']);
   }
+
   public onSubmit() {
     this.servicecliente.salvar(this.form.value);
     this.router.navigate(['menucliente']);

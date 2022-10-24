@@ -16,11 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 
-
 @NgModule({
-  declarations: [
-    HomeComponent
-  ],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -36,6 +33,6 @@ import { HomeComponent } from './home/home.component';
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-  ]
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

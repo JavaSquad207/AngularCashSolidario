@@ -1,57 +1,50 @@
 <div id="container">
-<mat-card>
+  <mat-card>
 
-  <mat-toolbar color="primary"> Cadastro de Campanha </mat-toolbar>
+    <mat-toolbar color="primary"> Cadastro de Campanha </mat-toolbar>
 
-  <mat-card-content>
-    <form [formGroup]="form" class="min-width">
+    <mat-card-content>
+      <form [formGroup]="form" class="min-width">
 
-      <mat-form-field class="full-width">
-        <input matInput name="nome" type="text" placeholder="Nome" [(ngModel)]="campanha.nome" formControlName="nome">
-      </mat-form-field>
-      <p></p>
+        <mat-form-field class="full-width">
+          <input matInput name="nome" type="text" placeholder="Nome" [(ngModel)]="campanha.nome" formControlName="nome">
+        </mat-form-field>
+        <p></p>
 
-      <mat-form-field class="full-width" >
-        <mat-label>Entidade Registrada</mat-label>
-        <mat-select formControlName="fkIdentidade">
-          <mat-option *ngFor="let entidade of entidades" [value]="entidade.id"   compareWith="compareObjects">
-            {{entidade.id}}- {{entidade.nome}}
-          </mat-option>
-        </mat-select>
+        <mat-form-field class="full-width">
+          <mat-label>Entidade Registrada</mat-label>
+          <mat-select formControlName="fkIdentidade">
+            <mat-option *ngFor="let entidade of entidades" [value]="entidade.id" compareWith="compareObjects">
+              {{entidade.id}}- {{entidade.nome}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <P></P>
 
         <mat-form-field class="full-width">
           <mat-label>Data de Início da Campanha: </mat-label>
-          <input matInput  type="date" name="dataInicio"  formControlName="dataInicio" required="">
+          <input matInput type="date" name="dataInicio" formControlName="dataInicio" required="">
           <mat-hint>MM/YYYY</mat-hint>
-
           <mat-datepicker #dataInicio></mat-datepicker>
         </mat-form-field>
-
         <P></P>
 
         <mat-form-field class="full-width">
           <mat-label>Data de Final da Campanha: </mat-label>
           <input matInput type="date" name="dataFinal" formControlName="dataFinal" required="">
           <mat-hint>MM/YYYY</mat-hint>
-
           <mat-datepicker #dataFinal></mat-datepicker>
         </mat-form-field>
-
         <P></P>
 
+      </form>
 
+    </mat-card-content>
 
-    </form>
-    <!--<pre>{{campanha | json }}</pre>-->
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()"> Salvar </button>
+      <button mat-raised-button (click)="onCancel()"> Volta sem Salvar</button>
+    </mat-card-actions>
 
-  </mat-card-content>
-
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()"> Salvar </button>
-    <button mat-raised-button (click)="onCancel()"> Volta sem Salvar</button>
-  </mat-card-actions>
-
-</mat-card>
+  </mat-card>
 </div>

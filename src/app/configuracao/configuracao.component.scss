@@ -3,12 +3,13 @@
     background-color: grey;
     border: 1px solid;
     margin-left: 3px;
-    
   }
+
   .mat-mini-fab{
     color: white;
     background-color: grey;
   }
+
   #container {
     width: calc(100% - 5rem);
     height: 100vh;
@@ -19,14 +20,12 @@
     transition: all .5s ease;
     background: grey;
     padding: 3rem;
-    //background-image: url("/assets/img/Logo.png");
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
     height:100%;
-    
-  
   }
+
   .mat-raised-button {
     background-color: grey;
     color: white;
@@ -36,9 +35,9 @@
   background-color: grey;
   color: white;
 }
+
 #suporte{
   display: flex;
   align-items: center;
   border: 1px solid;
-  
 }

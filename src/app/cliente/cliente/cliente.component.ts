@@ -14,18 +14,9 @@ export class ClienteComponent implements OnInit {
 
   public dataSource: Array<Cliente> = new Array();
 
-  constructor(
-    private router: Router,
-    private clienteService: ClienteService,
-
-
-  ) {}
+  constructor(private router: Router, private clienteService: ClienteService) {}
 
   ngOnInit(): void {
-
-
-
-
     this.buscarClientes();
   }
   public buscarClientes() {
@@ -56,11 +47,10 @@ export class ClienteComponent implements OnInit {
   }
 
   public ondAdd() {
-
     this.router.navigate(['novocliente']);
   }
 
   public onEdit(id: number) {
-    this.router.navigate(['editcliente/'+id]);
+    this.router.navigate(['editcliente/' + id]);
   }
 }

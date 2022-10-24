@@ -7,7 +7,7 @@ import { EntidadeService } from '../../shared/service/entidade.service';
 @Component({
   selector: 'app-entidade',
   templateUrl: './entidade.component.html',
-  styleUrls: ['./entidade.component.scss']
+  styleUrls: ['./entidade.component.scss'],
 })
 export class EntidadeComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nome', 'cnpj', 'actions'];
@@ -16,14 +16,13 @@ export class EntidadeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private entidadeService: EntidadeService,
-
-
+    private entidadeService: EntidadeService
   ) {}
 
   ngOnInit(): void {
     this.buscarEntidades();
   }
+
   public buscarEntidades() {
     this.entidadeService.list().subscribe(
       (resultado) => {
@@ -38,6 +37,7 @@ export class EntidadeComponent implements OnInit {
   public voltar() {
     this.router.navigate(['']);
   }
+
   public limpar() {
     this.dataSource = new Array();
   }
@@ -47,7 +47,6 @@ export class EntidadeComponent implements OnInit {
   }
 
   public onDelete(id: number): void {
-
     this.entidadeService.excluir(id);
     this.dataSource = this.dataSource.filter((p) => p.id != id);
   }
@@ -57,9 +56,6 @@ export class EntidadeComponent implements OnInit {
   }
 
   public onEdit(id: number) {
-    
-    this.router.navigate(['editentidade/'+ id]);
-
+    this.router.navigate(['editentidade/' + id]);
   }
 }
-

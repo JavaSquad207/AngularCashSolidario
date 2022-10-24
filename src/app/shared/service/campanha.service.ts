@@ -1,10 +1,11 @@
-import { Observable } from 'rxjs';
-import { Campanha } from '../model/campanha';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Campanha } from '../model/campanha';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CampanhaService {
   private readonly API = 'http://localhost:8080/campanha';
@@ -21,9 +22,8 @@ export class CampanhaService {
       .subscribe((data) => {
         console.log(data);
         dataCampanha = data;
-
       });
-      return dataCampanha!;
+    return dataCampanha!;
   }
 
   excluir(id: number) {
@@ -33,7 +33,6 @@ export class CampanhaService {
   }
 
   listid(id: number): Observable<Campanha> {
-    return this.httpClient.get<Campanha>(this.API + '/campanhaid/'+id);
+    return this.httpClient.get<Campanha>(this.API + '/campanhaid/' + id);
   }
-
 }

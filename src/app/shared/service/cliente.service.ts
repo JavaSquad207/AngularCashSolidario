@@ -4,12 +4,10 @@ import { Observable } from 'rxjs';
 
 import { Cliente } from './../model/cliente';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClienteService {
-
   private readonly API = 'http://localhost:8080/cliente';
 
   constructor(private httpClient: HttpClient) {}
@@ -25,12 +23,9 @@ export class ClienteService {
       .subscribe((data) => {
         console.log(data);
         dataCliente = data;
-
       });
-      return dataCliente!;
+    return dataCliente!;
   }
-
-
 
   excluir(id: number) {
     return this.httpClient
@@ -39,9 +34,6 @@ export class ClienteService {
   }
 
   buscarClienteId(id: number): Observable<Cliente> {
-
     return this.httpClient.get<Cliente>(this.API + '/clienteid/' + id);
-
   }
-
 }
